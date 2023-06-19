@@ -5,5 +5,10 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * 3)];
 }
 
-let b = getComputerChoice();
-console.log(b);
+
+
+let computerSelection = getComputerChoice();
+let playerSelection = prompt("Rock, Paper or Scissors", "");
+playerSelection = `${playerSelection[0].toUpperCase()}${playerSelection.substring(1).toLowerCase()}`;
+
+console.log(playerSelection);
