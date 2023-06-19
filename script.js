@@ -1,7 +1,7 @@
 console.log("Hello there!");
 
 function getComputerChoice() {
-    let choices = ["rock", "paper", "scissors"];
+    let choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random() * 3)];
 }
 
