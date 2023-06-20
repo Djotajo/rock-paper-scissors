@@ -1,5 +1,3 @@
-console.log("Hello there!");
-
 function getComputerChoice() {
     let choices = ["Rock", "Paper", "Scissors"];
     return choices[Math.floor(Math.random() * 3)];
@@ -14,8 +12,6 @@ function getPlayerChoice() {
     playerSelection = `${playerSelection[0].toUpperCase()}${playerSelection.substring(1).toLowerCase()}`;
     return playerSelection;
 }
-
-
 
 function playRound(computerSelection, playerSelection) {
     if (computerSelection === "Scissors" && playerSelection === "Paper" || computerSelection === "Paper" && playerSelection === "Rock" || computerSelection === "Rock" && playerSelection === "Scissors") {
