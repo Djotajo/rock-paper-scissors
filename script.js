@@ -13,7 +13,6 @@ function playRound(computerSelection, playerSelection) {
     } else if (computerSelection === computerSelection) {
         return `Tie! ${playerSelection} brings luck to neither opponent.`
     }
-
 }
 
 let getComputerScore = 0;
@@ -27,7 +26,36 @@ const rock = document.querySelector("#Rock");
 const paper = document.querySelector("#Paper");
 const scissors = document.querySelector("#Scissors");
 
-const options = document.getElementsByTagName("button");
+const options = document.querySelectorAll("button:not(#newG)");
+
+const winner = document.querySelector("#winner");
+
+const newGame = document.querySelector("#newGame");
+
+const history = document.querySelector("#history");
+
+function playNewGame() {
+    newGame.addEventListener("click", () => {
+        window.location.reload();
+})} 
+
+function disableButtons() {
+    for (let option of options) {
+        option.disabled = true;
+        newGame.removeAttribute("hidden");
+        playNewGame()
+    }
+}
+
+function declareWinner() {
+    if (getComputerScore == 5) {
+        winner.textContent = "You lose!";
+        disableButtons();
+    } else if (getPlayerScore == 5) {
+        winner.textContent = "You win!";
+        disableButtons();
+    }
+}
 
 for (let option of options) {
     option.addEventListener("click", function(e) {
@@ -41,8 +69,15 @@ for (let option of options) {
             playerScore.textContent = getPlayerScore;
         };
         console.log(getRoundResult);
+        let roundHistory = document.createElement("p");
+        roundHistory.textContent = (getRoundResult);
+        history.appendChild(roundHistory);
+        declareWinner()
+        // playNewGame()
     });
 }
+
+
 
 // rock.addEventListener("click", function(e) {
 //     let getRoundResult = playRound(getComputerChoice(), e.target.id);
