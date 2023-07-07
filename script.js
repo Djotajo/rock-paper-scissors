@@ -6,12 +6,12 @@ function getComputerChoice() {
 
 function playRound(computerSelection, playerSelection) {
     if (computerSelection === "Scissors" && playerSelection === "Paper" || computerSelection === "Paper" && playerSelection === "Rock" || computerSelection === "Rock" && playerSelection === "Scissors") {
-        return `Computer Wins! ${computerSelection} beats ${playerSelection}`
+        return `Computer Wins! ${computerSelection} > ${playerSelection}`
     }
     else if (playerSelection === "Scissors" && computerSelection === "Paper" || playerSelection === "Paper" && computerSelection === "Rock" || playerSelection === "Rock" && computerSelection === "Scissors") {
-        return `Player Wins! ${playerSelection} beats ${computerSelection}`
+        return `Player Wins! ${playerSelection} > ${computerSelection}`
     } else if (computerSelection === computerSelection) {
-        return `Tie! ${playerSelection} brings luck to neither opponent.`
+        return `Tie! You both chose ${playerSelection}.`
     }
 }
 
